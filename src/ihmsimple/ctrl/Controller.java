@@ -1,5 +1,7 @@
 package ihmsimple.ctrl;
 
+import ihmsimple.services.ServiceDevine;
+
 /**
  * Classe représentant le contrôleur de l'application MVC "IhmSimple".
  * 
@@ -12,17 +14,17 @@ public class Controller {
      * Le nombre courrant de l'utilisateur.
      */
     // VOTRE CODE ICI...
-
+    
     /**
      * Référence à la vue de l'application.
      */
     // VOTRE CODE ICI...
-
+    private View refView;
     /**
      * Référence au serviceDevine de l'application.
      */
     // VOTRE CODE ICI...
-
+    private ServiceDevine refServiceDevine;
     /**
      * Constructeur du contrôleur. Comme toujours, le travail N°1 consiste à
      * initialiser TOUS nos attributs :-).
@@ -65,6 +67,7 @@ public class Controller {
      */
     public void setRefView(View refView) {
         // VOTRE CODE ICI...
+        this.refView = refView;
     }
 
     /**
@@ -75,6 +78,7 @@ public class Controller {
      */
     public void setRefServiceDevine(ServiceDevine refServiceDevine) {
         // VOTRE CODE ICI...
+        this.refServiceDevine = refServiceDevine;
     }
 
     /**
@@ -84,6 +88,7 @@ public class Controller {
      */
     public View getRefView() {
         // VOTRE CODE ICI...
+        return refView;
     }
 
     /**
@@ -93,6 +98,7 @@ public class Controller {
      */
     public ServiceDevine getRefServiceDevine() {
         // VOTRE CODE ICI...
+        return refServiceDevine;
     }
 
 }
