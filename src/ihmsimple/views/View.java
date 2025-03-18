@@ -1,11 +1,11 @@
 package ihmsimple.views;
-
+ 
 import ihmsimple.ctrl.Controller;
-
+ 
 import static ihmsimple.services.ServiceDevine.NOMBRE_INVALIDE;
-
+ 
 import java.awt.Color;
-
+ 
 /**
  * Classe représentant l'ihm de l'application MVC "IhmSimple".
  *
@@ -14,7 +14,7 @@ import java.awt.Color;
  * @version 1.0.0
  */
 public class View extends javax.swing.JFrame {
-
+ 
     /**
      * ATTENTION : ces attributs de l'ihm ne doivent pas être modifiés car
      * automatiquement modifiés et regénérés par l'éditeur.
@@ -27,19 +27,19 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelProposition;
     private javax.swing.JTextField jTextFieldProposition;
     // End of variables declaration//GEN-END:variables
-
+ 
     /**
      * La référence au contrôleur de l'application.
      */
     private Controller refCtrl;
-
+ 
     /**
      * Constructeur de l'ihm.
      */
     public View() {
         this.refCtrl = null;
     }
-
+ 
     /**
      * Prépare l'ihm et ses composants puis rends l'ihm visible à l'écran.
      */
@@ -48,7 +48,7 @@ public class View extends javax.swing.JFrame {
         setLocationRelativeTo( null );
         setVisible( true );
     }
-
+ 
     /**
      * Retourne la valeur entière correspondant à ce qui a été saisi par l'utilisateur dans le champ "proposition".
      *
@@ -56,19 +56,19 @@ public class View extends javax.swing.JFrame {
      *         convertible en un entier
      */
     public int lireValeurProposee() {
-
+ 
         String contenu = jTextFieldProposition.getText();
         int valeur = NOMBRE_INVALIDE;
-
+ 
         try {
             valeur = Integer.valueOf( contenu );
         }
         catch ( Exception e ) {
         }
-
+ 
         return valeur;
     }
-
+ 
     /**
      * Affiche un nouveau status de l'application dans la couleur de fond souhaitée.
      *
@@ -79,7 +79,7 @@ public class View extends javax.swing.JFrame {
         jLabelEtat.setText( texte );
         jLabelEtat.setBackground( backgroundColor );
     }
-
+ 
     /**
      * Getter de la référence au contrôleur de l'application.
      *
@@ -88,7 +88,7 @@ public class View extends javax.swing.JFrame {
     public Controller getRefCtrl() {
         return refCtrl;
     }
-
+ 
     /**
      * Setter de la référence au contrôleur de l'application.
      *
@@ -97,7 +97,7 @@ public class View extends javax.swing.JFrame {
     public void setRefCtrl( Controller refCtrl ) {
         this.refCtrl = refCtrl;
     }
-
+ 
     /**
      * ATTENTION : cette méthode est appelée afin d'initialiser les composants de la vue et ne doit pas être modifiée car
      * son contenu est automatiquement modifié et regénéré par l'éditeur.
@@ -105,43 +105,43 @@ public class View extends javax.swing.JFrame {
     @SuppressWarnings( "unchecked" )
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
+ 
         jButtonNouveauJeu = new javax.swing.JButton();
         jLabelLogo = new javax.swing.JLabel();
         jLabelProposition = new javax.swing.JLabel();
         jTextFieldProposition = new javax.swing.JTextField();
         jButtonDeviner = new javax.swing.JButton();
         jLabelEtat = new javax.swing.JLabel();
-
+ 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
+ 
         jButtonNouveauJeu.setText("Ordinateur - Pense à un nouveau nombre");
         jButtonNouveauJeu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonNouveauJeuActionPerformed(evt);
             }
         });
-
+ 
         jLabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ihmsimple/views/pingouin.png"))); // NOI18N
-
+ 
         jLabelProposition.setText("Votre proposition : ");
-
+ 
         jTextFieldProposition.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-
+ 
         jButtonDeviner.setText("Vérifier");
         jButtonDeviner.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonDevinerActionPerformed(evt);
             }
         });
-
+ 
         jLabelEtat.setBackground(new java.awt.Color(153, 153, 255));
         jLabelEtat.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabelEtat.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelEtat.setText("Jeu terminé !");
         jLabelEtat.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jLabelEtat.setOpaque(true);
-
+ 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -180,10 +180,10 @@ public class View extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
-
+ 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+ 
     /**
      * Méthode événement appelée lors de la pression du bouton jButtonNouveauJeu.
      *
@@ -192,7 +192,7 @@ public class View extends javax.swing.JFrame {
     private void jButtonNouveauJeuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNouveauJeuActionPerformed
         refCtrl.actionDemarrerNouveauJeu();
     }//GEN-LAST:event_jButtonNouveauJeuActionPerformed
-
+ 
     /**
      * Méthode événement appelée lors de la pression du bouton jButtonDeviner.
      *
@@ -201,6 +201,7 @@ public class View extends javax.swing.JFrame {
     private void jButtonDevinerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDevinerActionPerformed
         refCtrl.actionDeviner();
     }//GEN-LAST:event_jButtonDevinerActionPerformed
-
-
+ 
+ 
 }
+ 

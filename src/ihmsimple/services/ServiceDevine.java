@@ -1,8 +1,8 @@
 package ihmsimple.services;
-
+import ihmsimple.ctrl.Controller;
 /**
  * Classe représentant le service de l'application MVC "IhmSimple".
- * 
+ *
  * @author <a href="mailto:friedlip@edufr.ch">Paul Friedli</a>
  * @since 29.10.2023
  * @version 1.0.0
@@ -12,20 +12,19 @@ public class ServiceDevine {
      * Nombre maximum que l'utilisateur peut proposer.
      */
      // VOTRE CODE ICI...
-     private static final int MAX_NOMBRE = 100;
-    
+    public static final int MAX_NOMBRE  = 100;
     /**
      * Nombre minimum que l'utilisateur peut proposer.
      */
      // VOTRE CODE ICI...
-    private static final int MIN_NOMBRE = 1;
+    public static final int MIN_NOMBRE = 1;
     /**
      * Valeur retournée par la méthode lireValeurProposee() si ce qui a été saisi
      * par l'utilisateur n'est pas convertible
      * en un entier.
      */
      // VOTRE CODE ICI...
-    private static final int NOMBRE_INVALIDE = -1;
+    public static final int NOMBRE_INVALIDE = -1;
     /**
      * Référence au contrôleur de l'application.
      */
@@ -39,39 +38,39 @@ public class ServiceDevine {
      */
     public ServiceDevine() {
         // VOTRE CODE ICI...
-
+        this.refCtrl = null;
     }
-
+ 
     /**
      * Invente et retourne un nouveau nombre à deviner aléatoirement choisi entre
      * les limites tolérées pour ce jeu.
-     * 
+     *
      * @return le nombre à deviner aléatoirement choisi
      */
     public int penserAUnNombre() {
         // VOTRE CODE ICI...
-        int nombreAl = MIN_NOMBRE + (int)(Math.random() * MAX_NOMBRE + 1); // 0 to 100
-        return nombreAl;
+        int nbreAleatoire = (int)(Math.random() * MAX_NOMBRE) + MIN_NOMBRE;
+        return nbreAleatoire;
     }
-
+ 
     /**
      * Retourne la référence au contrôleur de l'application.
-     * 
+     *
      * @param refCtrl la référence au contrôleur de l'application
      */
     public void setRefCtrl(Controller refCtrl) {
         // VOTRE CODE ICI...
         this.refCtrl = refCtrl;
     }
-
+ 
     /**
      * Retourne la référence au contrôleur de l'application.
-     * 
+     *
      * @return la référence au contrôleur de l'application
      */
     public Controller getRefCtrl() {
         // VOTRE CODE ICI...
         return refCtrl;
     }
-
+ 
 }
